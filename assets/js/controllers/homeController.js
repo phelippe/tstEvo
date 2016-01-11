@@ -4,13 +4,14 @@ angular.module('app.controllers')
 
         $scope.buscar = function () {
 
+            //@namikamusik
             Finder.jsonp({
                 blog_name: $scope.tumblr.nome,
-                //type: 'post',
-            }, function(data,status, headers){ // success
+                object_return: $scope.tumblr.retorno,
+            }, function(data){ // success
                 console.log('sucesso');
                 console.log(data);
-            }, function(data,status, headers){//error
+            }, function(data){//error
                 console.log('error');
                 console.log(data);
             })

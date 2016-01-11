@@ -1,22 +1,45 @@
 <section class="main">
     <div class="container">
         <div class="row">
-            <form class="form-inline" name="form" role="form" method="POST" ng-submit="buscar()">
+            <form class="form" name="form" role="form" method="POST" ng-submit="buscar()">
 
                 <div class="form-group">
-                    <label class="col-md-4 control-label">Blog name:</label>
+                    <label class="col-md-4 control-label">Blog:</label>
                     <div class="col-md-6">
                         <input type="text" required class="form-control" ng-model="tumblr.nome" />
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="col-md-4 control-label">Blog name:</label>
+                    <label class="col-md-4 control-label">Tipo do retorno:</label>
                     <div class="col-md-6">
-                        <input type="text" required class="form-control" ng-model="tumblr.nome" />
+                        <label>
+                            <input type="radio" required value="text" name="retorno" ng-model="tumblr.retorno" />
+                            Texto
+                        </label>
+                        <label>
+                            <input type="radio" value="chat" name="retorno" ng-model="tumblr.retorno" />
+                            Conversa
+                        </label>
+                        <label>
+                            <input type="radio" value="link" name="retorno" ng-model="tumblr.retorno" />
+                            Link
+                        </label>
+                        <label>
+                            <input type="radio" value="photo" name="retorno" ng-model="tumblr.retorno" />
+                            Foto
+                        </label>
+                        <label>
+                            <input type="radio" value="audio" name="retorno" ng-model="tumblr.retorno" />
+                            Audio
+                        </label>
+                        <label>
+                            <input type="radio" value="video" name="retorno" ng-model="tumblr.retorno" />
+                            Video
+                        </label>
                     </div>
                 </div>
-                
+
                 <div class="form-group">
                     <div class="col-md-6 col-md-offset-4">
                         <button type="submit" class="btn btn-primary">Busca</button>

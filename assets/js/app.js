@@ -9,7 +9,8 @@ angular.module('app.services', ['ngResource', 'jtt_tumblr']);
 
 app.provider('appConfig', ['$httpParamSerializerProvider', function ($httpParamSerializerProvider) {
     var config = {
-        baseUrl: 'http://localhost/sites/teste_evolux/public/',
+        //baseUrl: 'http://localhost/sites/teste_evolux/public/',
+        token: 'ECjL3qWZkVMKNPLYxzGF45lX5IWiFrrKOnJ8vRvuDf8Mc0Cln1',
     }
 
     return {
