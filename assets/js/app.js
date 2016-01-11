@@ -5,7 +5,7 @@ var app = angular.module('app', [
 angular.module('app.controllers', [/*'ngMessages', 'ngSanitize'*/]);
 angular.module('app.filters', []);
 angular.module('app.directives', []);
-angular.module('app.services', ['ngResource']);
+angular.module('app.services', ['ngResource', 'jtt_tumblr']);
 
 app.provider('appConfig', ['$httpParamSerializerProvider', function ($httpParamSerializerProvider) {
     var config = {
