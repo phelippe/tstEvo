@@ -5,7 +5,7 @@ var app = angular.module('app', [
 angular.module('app.controllers', [/*'ngMessages', 'ngSanitize'*/]);
 angular.module('app.filters', []);
 angular.module('app.directives', []);
-angular.module('app.services', ['ngResource', 'jtt_tumblr']);
+angular.module('app.services', ['ngResource']);
 
 app.provider('appConfig', ['$httpParamSerializerProvider', function ($httpParamSerializerProvider) {
     var config = {
@@ -31,12 +31,7 @@ app.config([
                 controller: 'HomeController',
                 title: 'Home',
             })
-            /*.when('/home', {
-                templateUrl: 'public/views/home.html',
-                controller: 'HomeController',
-                title: 'Home',
-            })*/
-            .when('/post/:id', {
+            .when('/:blog_name/post/:post_id', {
                 templateUrl: 'public/views/post.html',
                 controller: 'PostController',
             })

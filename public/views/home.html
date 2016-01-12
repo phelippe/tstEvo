@@ -5,36 +5,38 @@
 
                 <div class="form-group">
                     <label class="col-md-4 control-label">Blog:</label>
+
                     <div class="col-md-6">
-                        <input type="text" required class="form-control" ng-model="tumblr.nome" />
+                        <input type="text" required class="form-control" ng-model="tumblr.nome"/>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="col-md-4 control-label">Tipo do retorno:</label>
+                    <label class="col-md-4 control-label">Filtro de posts:</label>
+
                     <div class="col-md-6">
                         <label>
-                            <input type="radio" required value="text" name="retorno" ng-model="tumblr.retorno" />
+                            <input type="radio" value="text" name="retorno" ng-model="tumblr.retorno"/>
                             Texto
                         </label>
                         <label>
-                            <input type="radio" value="chat" name="retorno" ng-model="tumblr.retorno" />
+                            <input type="radio" value="chat" name="retorno" ng-model="tumblr.retorno"/>
                             Conversa
                         </label>
                         <label>
-                            <input type="radio" value="link" name="retorno" ng-model="tumblr.retorno" />
+                            <input type="radio" value="link" name="retorno" ng-model="tumblr.retorno"/>
                             Link
                         </label>
                         <label>
-                            <input type="radio" value="photo" name="retorno" ng-model="tumblr.retorno" />
+                            <input type="radio" value="photo" name="retorno" ng-model="tumblr.retorno"/>
                             Foto
                         </label>
                         <label>
-                            <input type="radio" value="audio" name="retorno" ng-model="tumblr.retorno" />
+                            <input type="radio" value="audio" name="retorno" ng-model="tumblr.retorno"/>
                             Audio
                         </label>
                         <label>
-                            <input type="radio" value="video" name="retorno" ng-model="tumblr.retorno" />
+                            <input type="radio" value="video" name="retorno" ng-model="tumblr.retorno"/>
                             Video
                         </label>
                     </div>
@@ -46,6 +48,23 @@
                     </div>
                 </div>
             </form>
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Descrição</th>
+                    <th>Ação</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="post in posts">
+                    <td>{{post.id}}</td>
+                    <td>{{post.summary}}</td>
+                    <td><a ng-href="#/{{post.blog_name}}/post/{{post.id}}">Ver</a></td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </section>
