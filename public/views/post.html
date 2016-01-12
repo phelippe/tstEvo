@@ -6,7 +6,9 @@
                     <table>
                         <tr ng-repeat="(chave, valor) in post">
                             <td><strong>{{chave}}</strong></td>
-                            <td>{{valor}}</td>
+                            <td>
+                                {{ chave=='timestamp' ? ( (valor | date:'dd/MM/yyyy HH:mm:ss a Z')+' ->*Valor alterado por filtro' ) : valor }}
+                            </td>
                         </tr>
                     </table>
                 </div>

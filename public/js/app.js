@@ -1,13 +1,12 @@
 var app = angular.module('app', [
-    'ngRoute', 'app.controllers', 'app.services', 'app.filters', 'app.directives',
+    'ngRoute', 'app.controllers', 'app.services', 'app.filters', 'ngSanitize'
 ]);
 
-angular.module('app.controllers', [/*'ngMessages', 'ngSanitize'*/]);
+angular.module('app.controllers', ['ngSanitize']);
 angular.module('app.filters', []);
-angular.module('app.directives', []);
 angular.module('app.services', ['ngResource']);
 
-app.provider('appConfig', ['$httpParamSerializerProvider', function ($httpParamSerializerProvider) {
+app.provider('appConfig', function () {
     var config = {
         //baseUrl: 'http://localhost/sites/teste_evolux/public/',
         token: 'ECjL3qWZkVMKNPLYxzGF45lX5IWiFrrKOnJ8vRvuDf8Mc0Cln1',
@@ -19,7 +18,7 @@ app.provider('appConfig', ['$httpParamSerializerProvider', function ($httpParamS
             return config;
         }
     };
-}]);
+});
 
 app.config([
     '$routeProvider',
